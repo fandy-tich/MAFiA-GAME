@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mafia Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Halaman 1: Registrasi -->
+  <div id="page-register" class="page">
+    <h1>Registrasi Pemain</h1>
+    <input type="text" id="player-name" placeholder="Masukkan nama">
+    <button onclick="registerPlayer()">Daftar</button>
+    <p id="player-count">Pemain terdaftar: 0/35</p>
+    <button id="btn-start-game" onclick="startGame()" disabled>Mulai Game</button>
+  </div>
+
+  <!-- Halaman 2: Home -->
+  <div id="page-home" class="page hidden">
+    <div class="top-bar">
+      <div id="day-display" class="day">Day-1</div>
+      <div id="btn-room-voting" class="rounded-button" onclick="goToPage('page-room-voting')">Room Voting</div>
+    </div>
+    <div id="player-info" class="player-info">
+      <!-- Grid player: setiap kotak berisi 3 baris (nama, peran, tombol skill) -->
+    </div>
+    <div class="bottom-bar">
+      <button class="rounded-button" onclick="goToPage('page-skill')">Gunakan Skill</button>
+    </div>
+  </div>
+
+  <!-- Halaman 3: Skill -->
+  <div id="page-skill" class="page hidden">
+    <h2>Gunakan Skill</h2>
+    <div id="skill-grid" class="grid-5x7">
+      <!-- Grid 5x7 target skill -->
+    </div>
+    <button class="rounded-button" onclick="goToPage('page-home')">Home</button>
+  </div>
+
+  <!-- Halaman 4: Room Voting -->
+  <div id="page-room-voting" class="page hidden">
+    <h2>Room Voting</h2>
+    <div id="voting-grid" class="grid-5x7">
+      <!-- Grid 5x7 untuk voting; pemain yang tereliminasi tampil pudar dan perannya terlihat -->
+    </div>
+    <button class="rounded-button" onclick="submitVote()">Submit Vote</button>
+    <button class="rounded-button" onclick="goToPage('page-home')">Home</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
