@@ -1,0 +1,130 @@
+/* Warna dasar: tema hitam dengan aksen merah */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ff6666, #000);
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+/* Setiap halaman disembunyikan kecuali yang aktif */
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page:not(.hidden) {
+  display: block;
+}
+
+/* Registrasi: background sudah menggunakan gradient dari body */
+#page-register input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+#page-register button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#page-register button:disabled {
+  background-color: #444;
+}
+
+/* Top Bar di Home */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.day {
+  font-size: 24px;
+  color: #990000;  /* merah agak gelap */
+  font-weight: bold;
+  text-align: left;
+}
+
+.rounded-button {
+  background-color: black;
+  color: #ff6666;  /* merah terang */
+  border: 2px solid #ff6666;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Grid 5x7 untuk pemain, skill, dan voting */
+.grid-5x7 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Kotak pemain (rounded rectangle) */
+.player-box {
+  background-color: black;
+  border: 2px solid #ff6666;
+  border-radius: 15px;
+  width: 100px;
+  padding: 5px;
+  color: white;
+}
+
+/* Tampilan di dalam kotak: 3 baris */
+.player-box .name {
+  font-size: 16px;
+  color: #ff3333; /* merah darah terang */
+  font-weight: bold;
+}
+.player-box .role {
+  font-size: 14px;
+  color: white;
+}
+.player-box .skill {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 5px;
+  color: white;
+}
+
+/* Warna khusus untuk skill berdasarkan peran */
+.skill-dokter {
+  background-color: #ff6666;
+}
+.skill-mafia, .skill-killer {
+  background-color: #ff4d4d;
+}
+.skill-polisi {
+  background-color: #3399ff;
+}
+.skill-hunter {
+  background-color: #ff9900;
+}
+.skill-overlord {
+  background-color: #39ff14;
+}
+.skill-none {
+  background-color: gray;
+}
+
+/* Jika pemain sudah dieliminasi, tampilkan dengan opacity lebih rendah */
+.eliminated {
+  opacity: 0.5;
+}
+
+/* Bottom bar di Home */
+.bottom-bar {
+  margin-top: 20px;
+}
